@@ -22,10 +22,9 @@
             }
 
             //seleccion de la base de datos con la que vamos a trabajar 
-            $db= mysqli_select_db ($cone, "papeleria");
+            $db= mysqli_select_db($cone, "papeleria");
             $consulta = "select * from articulos"; 
             $result = mysqli_query($cone, $consulta);
-
             while ($registro = mysqli_fetch_array($result)) {
                 echo "
                 <tr>
