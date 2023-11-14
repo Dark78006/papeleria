@@ -18,12 +18,9 @@
             $cone = mysqli_connect("localhost", "root", "");
             if (!$cone)
             {
-                echo "No se ha podido conectar con el servidor"  . mysqli_error($cone);
+                echo "No se ha podido conectar con el servidor"  . mysqli_error();
             }
-            else
-            {
-                echo "Hemos conectado al servidor <br>";
-            }
+
             //seleccion de la base de datos con la que vamos a trabajar 
             $db= mysqli_select_db ($cone, "papeleria");
             $consulta = "select * from articulos"; 
@@ -32,7 +29,6 @@
             while ($registro = mysqli_fetch_array($result)) {
                 echo "
                 <tr>
-
                 <td width='50'align='center'>".$registro ['codigo']."</td>
                 <td width='250'>".$registro ['nombre']."</td>
                 <td width='150'align='center'>".$registro ['cantidad']."</td>
