@@ -6,7 +6,8 @@
 //Conexion con la base
 $cone = mysqli_connect("localhost", "root", "");
 
-//seleccion de la base de datos con la que vamos a trabajar mysqli_select_db($cone, "papeleria");
+//seleccion de la base de datos con la que vamos a trabajar 
+mysqli_select_db($cone, "papeleria");
 $codigo = $_REQUEST['codigo'];
 
 mysqli_query($cone, "delete from articulos where codigo = $codigo"); 
