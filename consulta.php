@@ -17,28 +17,22 @@
             $codigo = $_REQUEST['cod'];
             //Conexion con la base
             $cone = mysqli_connect("localhost", "root", "");
-
-
-            //seleccion de la base de datos con la que vamos a trabajar mysqli_select_db ($cone, "papeleria");
-            $consulta = mysqli_query($cone, "select * from articulos WHERE codigo ='$codigo '");
+            //seleccion de la base de datos con la que vamos a trabajar 
+            mysqli_select_db ($cone, "papeleria");
+            $consulta = mysqli_query($cone, "select * from articulos WHERE codigo ='$codigo'");
             while ($registro = mysqli_fetch_array($consulta)) {
                 echo "
                 <tr>
-                <td width='50'
-                align='center'>" . $registro['codigo'] . "</td>
-                <td width='250'>" . $registro['nombre'] . "</td>
-                <td width='150'
-                align='center'>" . $registro['cantidad'] . "</td>
-                <td width='150'
-                align='center'>" . $registro['precio'] . "</td>
+                <td width='50' align='center'>".$registro['codigo']."</td>
+                <td width='250'>".$registro['nombre']."</td>
+                <td width='150' align='center'>".$registro['cantidad']."</td>
+                <td width='150' align='center'>".$registro['precio']."</td>
                 </tr>
                 ";
                 mysqli_close($cone);
             }
             ?>
-            <h1>
-                <div align="center">CONSULTA POR ARTICULO</div>
-            </h1>
+            <h1><div align="center">CONSULTA POR ARTICULO</div></h1>
             <div align="center"><a href="consultareg.php">Visualizar el contenido de la base</a></div>
 </Body>
 
