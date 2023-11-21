@@ -24,8 +24,8 @@ mysqli_close($cone);
 
 echo "
   <p>Los datos han sido actualizados con exito.</p>
-  <p><a href='javascript: history.go(-1)'>VOLVER ATRÁS</a></p>
-  <p><a href='javascript: history.go(-2)'>INICIO</a></p>
+  <p><a href='javascript:history.go(-1)'>VOLVER ATRÁS</a></p>
+  <p><a href='javascript:history.go(-2)'>INICIO</a></p>
   ";
   ?>
 
